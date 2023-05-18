@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>Nuestros Productos</title>
 </head>
+
 <body>
+        <div class="head">
 
-   <div class="head">
-        
-        <div class="logo">
-            <a href="img/logo.png">Music Pro</a>
+            <div class="logo">
+                <a href="img/logo.png">Music Pro</a>
+            </div>
+
+            <nav class="navbar">
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="carrito.html">Carrito</a>
+            </nav>
         </div>
-
-        <nav class="navbar">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Productos</a>
-            
-        </nav>
-
-   </div>
+        
+        <div>
+            <h1>Lista de Productos</h1>
+            <div class="card-columns" id="productos-lista">
+                
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/productos.js"></script>
+</body>

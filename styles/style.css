@@ -16,7 +16,7 @@ body {
     justify-content: space-between;
     height: 63px;
     background: #171717;
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 100;
 }
@@ -55,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 60vh;
-    background: url(img/inicio.png);
+    background: url(../img/inicio.png);
     background-size: cover;
 }
 
@@ -141,7 +141,7 @@ p {
 }
 
 .price {
-    background: url(img/cincuenta.png);
+    background: url(../img/cincuenta.png);
   
 }
 
