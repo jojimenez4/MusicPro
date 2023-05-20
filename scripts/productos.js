@@ -15,7 +15,8 @@ $(document).ready(function () {
                     '<h5 class="card-title">' + producto.nombre_producto + '</h5>' +
                     '<p class="card-text" style="color:black"> Marca: ' + producto.marca + '</p>' +
                     '<p class="card-text" style="color:black"> Precio: ' + producto.precio + '</p>' +
-                    '<button class="agregar-carro btn btn-primary" onclick="agregarAlCarro(' + producto.nombre_producto + ', ' + producto.precio + ')">Agregar al Carro</button>' +
+                    //'<button class="agregar-carro btn btn-primary" onclick="agregarAlCarro(' + producto.nombre_producto + ', ' + producto.precio + ')">Agregar al Carro</button>' +
+                    '<button class="agregar-carro btn btn-primary" data-nombre="' + producto.nombre_producto + '" data-precio="' + producto.precio + '">Agregar al Carro</button>' +
                     '</div>' +
                     '</div>';
 
