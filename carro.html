@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-  <title>Carro de Compras</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Document</title>
 </head>
 
 <body>
+
+  <div class="head">
+
+    <div class="logo">
+      <a href="img/logo.png">Music Pro</a>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="carro.html">Carrito</a>
+    </nav>
+
+  </div>
   <div class="container">
     <h1>Carro de Compras</h1>
     <div id="carro-productos">
       <h2>Productos en el Carro</h2>
       <ul id="carro-lista" class="list-group"></ul>
-      <p>Total: <input id="total" value="3000"></input></p>
+      <div id="total"> </div>
     </div>
     <div id="btn" class="mt-4 d-grid gap-2 d-md-flex justify-content-md-end">
       <button type="button" id="btn-pay" class="btn btn-warning" onclick="create()"
@@ -22,87 +40,6 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Obtener productos del almacenamiento local (carro de compras)
-      var carroProductos = JSON.parse(localStorage.getItem('carroProductos')) || [];
-
-      // Mostrar productos en el carro
-      function mostrarProductosEnCarro() {
-        $('#carro-lista').empty();
-        var total = 0;
-
-        carroProductos.forEach(function (producto) {
-          var item = '<li class="list-group-item">' +
-            '<span>' + producto.nombre + '</span>' +
-            '<span class="badge badge-primary badge-pill">' + producto.cantidad + '</span>' +
-            '<span class="badge badge-secondary">$' + producto.precio + '</span>' +
-            '<a href="#" class="eliminar" data-nombre="' + producto.nombre + '">&#10006;</a>' +
-            '</li>';
-
-          $('#carro-lista').append(item);
-          total += producto.precio * producto.cantidad;
-        });
-
-        $('#total').text('$' + total.toFixed(2));
-      }
-
-      // Agregar producto al carro
-      function agregarAlCarro(nombre, precio) {
-        var productoExistente = carroProductos.find(function (producto) {
-          return producto.nombre === nombre;
-        });
-
-        if (productoExistente) {
-          productoExistente.cantidad++;
-        } else {
-          var nuevoProducto = {
-            nombre: nombre,
-            precio: precio,
-            cantidad: 1
-          };
-          carroProductos.push(nuevoProducto);
-        }
-
-        // Guardar productos en el almacenamiento local
-        localStorage.setItem('carroProductos', JSON.stringify(carroProductos));
-
-        // Actualizar la vista del carro de compras
-        mostrarProductosEnCarro();
-      }
-
-      // Eliminar producto del carro
-      function eliminarDelCarro(nombre) {
-        carroProductos = carroProductos.filter(function (producto) {
-          return producto.nombre !== nombre;
-        });
-
-        // Guardar productos en el almacenamiento local
-        localStorage.setItem('carroProductos', JSON.stringify(carroProductos));
-
-        // Actualizar la vista del carro de compras
-        mostrarProductosEnCarro();
-      }
-
-      // Evento clic en el botón "Agregar al Carro"
-      $(document).on('click', '.agregar-carro', function (e) {
-        e.preventDefault();
-        var nombre = $(this).data('nombre');
-        var precio = $(this).data('precio');
-        agregarAlCarro(nombre, precio);
-      });
-
-      // Evento clic en el enlace "Eliminar"
-      $(document).on('click', '.eliminar', function (e) {
-        e.preventDefault();
-        var nombre = $(this).data('nombre');
-        eliminarDelCarro(nombre);
-      });
-
-      // Mostrar productos en el carro al cargar la página
-      mostrarProductosEnCarro();
-    });
-  </script>
   <script src="scripts/carrito.js"></script>
   <script src="scripts/transbank.js"></script>
 </body>

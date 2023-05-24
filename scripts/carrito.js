@@ -19,7 +19,7 @@ $(document).ready(function() {
         total += producto.precio * producto.cantidad;
       });
   
-      $('#total').text('$' + total.toFixed(2));
+      $('#total').append('Total: <input type="text" class="form-control" id="total2" value='+ total +' readonly></input>');
     }
   
     // Eliminar producto del carro

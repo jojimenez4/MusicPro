@@ -3,7 +3,7 @@ async function create(){
     const ordenCompra = "123456789"
     const sessionId = "1233DSXXD"
     /* LEER MONTO A PAGAR */
-    const monto = $("#total").val();
+    const monto = $("#total2").val();
     const urlRetornoPago = "http://127.0.0.1:5500/commit-pay.html"
     const url = "http://127.0.0.1:8900/api/v1/transbank/transaction/create";
     const method = 'POST';
