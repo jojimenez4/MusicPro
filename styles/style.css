@@ -55,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 60vh;
-    background: url(../img/inicio.png);
+    background: url(../img/inicio2.png);
     background-size: cover;
 }
 
@@ -97,8 +97,12 @@ p {
 }
 
 .sau {
-    padding: 50px 0;
-    background: #0004fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url(../img/inicio.png);
+    background-size: cover;
 }
 
 .box-container {
@@ -132,7 +136,7 @@ p {
 
 .box-container .box h3 {
     font-size: 20px;
-    color: #1a8fdd;
+    color: #1B1E44;
 }
 
 .box-container .box p {
@@ -141,13 +145,22 @@ p {
 }
 
 .price {
-    background: url(../img/cincuenta.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url(../img/PRODUCTOS.png);
+    background-size: cover;
   
 }
 
 .about {
-    background: #08b7ce;
-    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url(../img/nosotros.png);
+    background-size: cover;
 }
 
 .box-container2{

@@ -1,3 +1,13 @@
+var dailyIndicators = '';
+let USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+let CLPeso = new Intl.NumberFormat('es-ES', {
+    style: 'currency',
+    currency: 'CLP',
+});
+
 $(document).ready(function () {
     $.ajax({
         url: 'http://localhost:5000/productos',
@@ -14,13 +24,15 @@ $(document).ready(function () {
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + producto.nombre_producto + '</h5>' +
                     '<p class="card-text" style="color:black"> Marca: ' + producto.marca + '</p>' +
-                    '<p class="card-text" style="color:black"> Precio: ' + producto.precio + '</p>' +
-                    //'<button class="agregar-carro btn btn-primary" onclick="agregarAlCarro(' + producto.nombre_producto + ', ' + producto.precio + ')">Agregar al Carro</button>' +
+                    '<p class="card-text myDIV" style="color:black"> Precio: $' + CLPeso.format(producto.precio) + '</p>' +
+                    '<p class="card-text myDIV" style="color:black"> Precio: ' + USDollar.format(Math.trunc(producto.precio / dailyIndicators.dolar_intercambio.valor)) + ' USD</p>' +
                     '<button class="agregar-carro btn btn-primary" data-nombre="' + producto.nombre_producto + '" data-precio="' + producto.precio + '">Agregar al Carro</button>' +
                     '</div>' +
                     '</div>';
 
                 $('#productos-lista').append(card);
+
+                
             }
         },
         error: function () {
@@ -58,4 +70,11 @@ $(document).ready(function () {
         var precio = $(this).data('precio');
         agregarAlCarro(nombre, precio);
     });
+});
+
+$.getJSON('https://mindicador.cl/api', function (data) {
+    dailyIndicators = data;
+    $("<option>", {
+        html: 'D贸lar: ' + dailyIndicators.dolar_intercambio.valor
+    }).appendTo("select");
 });

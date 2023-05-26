@@ -34,4 +34,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script src="scripts/productos.js"></script>
+    <script>
+        let x = document.querySelectorAll(".myDIV");
+        for (let i = 0, len = x.length; i < len; i++) {
+            let num = Number(x[i].innerHTML)
+                .toLocaleString('en');
+            x[i].innerHTML = num;
+            x[i].classList.add("currSign");
+        }
+    </script>
 </body>
