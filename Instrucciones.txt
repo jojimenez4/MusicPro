@@ -1,0 +1,15 @@
+Primero que nada debemos hacer correr nuestras API's y para ello seguiremos estos pasos:
+
+1.- Abrir la carpeta de MusicPro en Visual Studio Code.
+2.- Abrir una terminal de git bash y dirigirse a la carpeta de transbank.
+3.- Ejecutar los siguientes pasos:
+	3.1.- python -m venv env
+	3.2.- source env/Scripts/activate
+	3.3.- pip install -r requirements.txt
+	3.4.- python manage.py
+	Con esto ya deberiamos tener nuestra API de transbank lista y andando.
+4.- Abrir una nueva terminal sin eliminar la anterior y dirigirnos a la carpeta api_instrumentos.
+5.- Una vez en la carpeta ejecutar el comando 'python api_instrumentos' y con esto deberia estar andando nuestra API de productos.
+6.- Si tiene instalada la extensión de Live Server entonces debemos ejecutarla con el icono de Live Server que se encuentra abajo a la derecha. Si no la tiene instalada entonces debe instalarla.
+
+Y ya con esto deberia de estar andando por completo nuestra página web para realizar pruebas de uso. 
